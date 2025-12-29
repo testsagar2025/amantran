@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-white.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -25,7 +25,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Amantran 3D - 3D Invitation Studio" 
-              className="h-12 md:h-14 w-auto brightness-[1.1]"
+              className="h-10 md:h-12 w-auto"
             />
           </Link>
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-white.png";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
             <img 
               src={logo} 
               alt="Amantran 3D" 
-              className="h-14 w-auto brightness-[1.1]"
+              className="h-12 w-auto"
             />
             <p className="text-muted-foreground text-sm leading-relaxed">
               Cinematic Digital Invitations for Weddings & Celebrations
