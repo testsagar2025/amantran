@@ -9,6 +9,7 @@ import Gallery from "./pages/Gallery";
 import Collection from "./pages/Collection";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
+import HowToOrder from "./pages/HowToOrder";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/collection/:id" element={<Collection />} />
+          <Route path="/how-to-order" element={<HowToOrder />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
