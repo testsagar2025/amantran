@@ -57,9 +57,6 @@ const CollectionsSection = () => {
             Explore Our Collections
           </h2>
           <div className="ornament-line w-32 mx-auto" />
-          <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
-            Each collection is created with a unique visual story, inspired by tradition, emotion, and cinematic storytelling — crafted to complement your celebration beautifully.
-          </p>
         </motion.div>
 
         {/* Collections Grid */}
