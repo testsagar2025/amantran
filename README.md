@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# Amantran 3D – 3D Invitation Studio 🎬✨
 
-## Project info
+**Amantran 3D** is a premium digital invitation studio specializing in cinematic **3D wedding and celebration invitations**.  
+We design elegant, visually rich invitations crafted with refined motion and timeless Indian aesthetics.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🌐 **Website:** https://amantran3d.in  
+📱 **WhatsApp:** +91 99812 49634  
+📧 **Email:** contact@amantran3d.in  
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## ✨ About the Project
 
-**Use Lovable**
+This repository contains the source code for the **Amantran 3D official website**, showcasing:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Premium 3D invitation collections
+- Cinematic motion design philosophy
+- Client testimonials and process overview
+- Easy WhatsApp-based inquiry system
 
-Changes made via Lovable will be committed automatically to this repo.
+The website is designed for families who appreciate **fine aesthetics, royal elegance, and unforgettable presentation**.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏠 Website Sections
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Home** – Brand introduction and hero showcase  
+- **About Us** – Studio philosophy and creative approach  
+- **Gallery** – Curated 3D invitation collections  
+- **How to Order** – Step-by-step invitation creation process  
+- **FAQ** – Common questions about customization, pricing, and delivery  
+- **Contact / WhatsApp** – Direct inquiry and support  
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🎥 Invitation Collections
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- The Royal Chronicle  
+- The Moonblossom Heirloom  
+- Shubh Aarambh  
+- Imperial Odyssey  
+- Sovereign Rhythm  
 
-# Step 3: Install the necessary dependencies.
-npm i
+Each collection reflects a unique blend of **Indian tradition and modern cinematic design**.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🛠️ Tech Stack (Example)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+> Update this section based on your actual setup
 
-**Use GitHub Codespaces**
+- HTML5 / CSS3  
+- JavaScript  
+- GSAP / Three.js (for animations, if used)  
+- Responsive Design (Mobile-first)  
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🚀 How It Works
 
-This project is built with:
+1. **Choose Your Design** – Browse curated collections  
+2. **Share Your Details** – Names, dates, venues, preferences  
+3. **Cinematic Customization** – Motion, transitions, fine detailing  
+4. **Final Delivery** – Ready-to-share digital invitation  
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## ⭐ Client Satisfaction
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- ⭐ **5.0 Rating**
+- 💍 **50+ Happy Couples**
+- Trusted across India for weddings, engagements, receptions & ceremonies
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
