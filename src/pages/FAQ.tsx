@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageTransition from "@/components/PageTransition";
 import {
   Accordion,
   AccordionContent,
@@ -164,85 +165,87 @@ const faqCategories = [
 
 const FAQ = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="section-padding">
-          <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center max-w-3xl mx-auto mb-16"
-            >
-              <h1 className="font-heading text-5xl md:text-6xl text-foreground mb-6">
-                Frequently Asked <span className="text-gold">Questions</span>
-              </h1>
-              <div className="ornament-line w-32 mx-auto mb-6" />
-              <p className="text-muted-foreground">
-                Everything you need to know about our invitations, customization process, and delivery.
-              </p>
-            </motion.div>
-
-            {/* FAQ Categories */}
-            <div className="max-w-3xl mx-auto space-y-12">
-              {faqCategories.map((category, categoryIndex) => (
-                <motion.div
-                  key={category.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
-                >
-                  <h2 className="font-heading text-2xl md:text-3xl text-gold mb-6">
-                    {category.title}
-                  </h2>
-                  <Accordion type="single" collapsible className="space-y-4">
-                    {category.faqs.map((faq, index) => (
-                      <AccordionItem
-                        key={index}
-                        value={`${category.title}-${index}`}
-                        className="bg-card/50 border border-border/50 rounded-lg px-6 data-[state=open]:border-gold/30"
-                      >
-                        <AccordionTrigger className="text-left font-heading text-lg text-foreground hover:text-gold hover:no-underline py-6">
-                          {faq.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground pb-6">
-                          {faq.answer}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Contact CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mt-16"
-            >
-              <p className="text-muted-foreground mb-4">
-                Still have questions? We're here to help.
-              </p>
-              <a
-                href="https://wa.me/919981249634"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gold font-medium hover:underline"
+    <PageTransition>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="pt-20">
+          {/* Hero Section */}
+          <section className="section-padding">
+            <div className="container mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-center max-w-3xl mx-auto mb-16"
               >
-                Chat with us on WhatsApp
-              </a>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+                <h1 className="font-heading text-5xl md:text-6xl text-foreground mb-6">
+                  Frequently Asked <span className="text-gold">Questions</span>
+                </h1>
+                <div className="ornament-line w-32 mx-auto mb-6" />
+                <p className="text-muted-foreground">
+                  Everything you need to know about our invitations, customization process, and delivery.
+                </p>
+              </motion.div>
+
+              {/* FAQ Categories */}
+              <div className="max-w-3xl mx-auto space-y-12">
+                {faqCategories.map((category, categoryIndex) => (
+                  <motion.div
+                    key={category.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+                  >
+                    <h2 className="font-heading text-2xl md:text-3xl text-gold mb-6">
+                      {category.title}
+                    </h2>
+                    <Accordion type="single" collapsible className="space-y-4">
+                      {category.faqs.map((faq, index) => (
+                        <AccordionItem
+                          key={index}
+                          value={`${category.title}-${index}`}
+                          className="bg-card/50 border border-border/50 rounded-lg px-6 data-[state=open]:border-gold/30"
+                        >
+                          <AccordionTrigger className="text-left font-heading text-lg text-foreground hover:text-gold hover:no-underline py-6">
+                            {faq.question}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-muted-foreground pb-6">
+                            {faq.answer}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Contact CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center mt-16"
+              >
+                <p className="text-muted-foreground mb-4">
+                  Still have questions? We're here to help.
+                </p>
+                <a
+                  href="https://wa.me/919981249634"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-gold font-medium hover:underline"
+                >
+                  Chat with us on WhatsApp
+                </a>
+              </motion.div>
+            </div>
+          </section>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </PageTransition>
   );
 };
 
