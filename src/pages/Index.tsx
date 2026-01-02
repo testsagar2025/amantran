@@ -7,22 +7,25 @@ import CollectionsCarousel from "@/components/home/CollectionsCarousel";
 import ProcessSection from "@/components/home/ProcessSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import InfoSection from "@/components/home/InfoSection";
+import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <HeroSection />
-        <StatementSection />
-        <CollectionsCarousel />
-        <ProcessSection />
-        <TestimonialsSection />
-        <InfoSection />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <PageTransition>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main>
+          <HeroSection />
+          <StatementSection />
+          <CollectionsCarousel />
+          <ProcessSection />
+          <TestimonialsSection />
+          <InfoSection />
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </PageTransition>
   );
 };
 
