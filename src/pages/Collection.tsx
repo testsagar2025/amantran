@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, FileText, Clock, MapPin, Heart, Calendar, Check } from "lucide-react";
@@ -5,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import VideoPlayer from "@/components/VideoPlayer";
+import BookingForm from "@/components/BookingForm";
 
 import royalChronicle from "@/assets/collection-royal-chronicle.jpg";
 import moonblossom from "@/assets/collection-moonblossom.jpg";
@@ -17,6 +20,7 @@ const collectionsData: Record<string, {
   category: string;
   description: string;
   image: string;
+  videoId: string;
   addons: string[];
 }> = {
   "royal-chronicle": {
@@ -24,6 +28,7 @@ const collectionsData: Record<string, {
     category: "Wedding Invitation",
     description: "The Royal Chronicle is designed to capture the grandeur and majesty of royal celebrations. Featuring ornate golden frames, regal motifs, and cinematic transitions, this invitation embodies the rich heritage and timeless elegance of traditional Indian weddings.",
     image: royalChronicle,
+    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
     addons: ["Save The Date", "3 Day Countdown", "2 Day Countdown", "One Day To Go", "Function Reminder with Location", "Thank You Note", "PDF Invitation"],
   },
   "moonblossom-heirloom": {
@@ -31,6 +36,7 @@ const collectionsData: Record<string, {
     category: "Wedding Invitation",
     description: "The Moonblossom Heirloom captures the ethereal beauty of moonlit romance. With delicate lotus florals, soft silver accents, and dreamy transitions, this collection is perfect for couples who appreciate subtle elegance and timeless charm.",
     image: moonblossom,
+    videoId: "dQw4w9WgXcQ",
     addons: ["Save The Date", "3 Day Countdown", "2 Day Countdown", "One Day To Go", "Function Reminder with Location", "Thank You Note", "PDF Invitation"],
   },
   "shubh-aarambh": {
@@ -38,6 +44,7 @@ const collectionsData: Record<string, {
     category: "Wedding Invitation",
     description: "Shubh Aarambh is designed to celebrate new beginnings with grace and elegance. Inspired by tradition and modern cinematic design, this invitation captures the warmth, joy, and auspicious spirit of wedding celebrations.",
     image: shubhAarambh,
+    videoId: "dQw4w9WgXcQ",
     addons: ["Save The Date", "3 Day Countdown", "2 Day Countdown", "One Day To Go", "Function Reminder with Location", "Thank You Note", "PDF Invitation"],
   },
   "imperial-odyssey": {
@@ -45,6 +52,7 @@ const collectionsData: Record<string, {
     category: "Wedding Invitation",
     description: "Imperial Odyssey takes you on a majestic journey through royal palaces and grand celebrations. With emerald and gold aesthetics, elephant motifs, and palatial architecture, this collection is perfect for destination weddings and grand celebrations.",
     image: imperialOdyssey,
+    videoId: "dQw4w9WgXcQ",
     addons: ["Save The Date", "3 Day Countdown", "2 Day Countdown", "One Day To Go", "Function Reminder with Location", "Thank You Note", "PDF Invitation"],
   },
   "sovereign-rhythm": {
@@ -52,6 +60,7 @@ const collectionsData: Record<string, {
     category: "Wedding Invitation",
     description: "Sovereign Rhythm blends contemporary design with traditional elements. Featuring modern geometric patterns, rose gold accents, and sophisticated animations, this collection appeals to couples who want a fresh, elegant aesthetic.",
     image: sovereignRhythm,
+    videoId: "dQw4w9WgXcQ",
     addons: ["Save The Date", "3 Day Countdown", "2 Day Countdown", "One Day To Go", "Function Reminder with Location", "Thank You Note", "PDF Invitation"],
   },
 };
@@ -77,6 +86,7 @@ const addonIcons: Record<string, React.ElementType> = {
 const Collection = () => {
   const { id } = useParams();
   const collection = id ? collectionsData[id] : null;
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   if (!collection) {
     return (
@@ -112,18 +122,21 @@ const Collection = () => {
         <section className="py-12">
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
-              {/* Image */}
+              {/* Video Player */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="relative aspect-square rounded-lg overflow-hidden gold-border"
+                className="relative"
               >
-                <img
-                  src={collection.image}
-                  alt={collection.name}
-                  className="w-full h-full object-cover"
-                />
+                <div className="aspect-[9/16] md:aspect-[3/4] rounded-lg overflow-hidden gold-border">
+                  <VideoPlayer
+                    videoId={collection.videoId}
+                    thumbnail={collection.image}
+                    title={collection.name}
+                    className="w-full h-full"
+                  />
+                </div>
               </motion.div>
 
               {/* Details */}
@@ -164,15 +177,19 @@ const Collection = () => {
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild variant="hero" size="lg">
-                    <a href="https://wa.me/919981249634" target="_blank" rel="noopener noreferrer">
-                      Book This Design
-                    </a>
+                  <Button 
+                    variant="hero" 
+                    size="lg"
+                    onClick={() => setIsBookingOpen(true)}
+                  >
+                    Book This Design
                   </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <a href="https://wa.me/919981249634" target="_blank" rel="noopener noreferrer">
-                      WhatsApp Inquiry
-                    </a>
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    onClick={() => setIsBookingOpen(true)}
+                  >
+                    WhatsApp Inquiry
                   </Button>
                 </div>
               </motion.div>
@@ -228,6 +245,13 @@ const Collection = () => {
       </main>
       <Footer />
       <WhatsAppButton />
+      
+      {/* Booking Form Modal */}
+      <BookingForm
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        collectionName={collection.name}
+      />
     </div>
   );
 };
